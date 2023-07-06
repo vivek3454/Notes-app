@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root{
+    --primaryColor:#8cd4fd;
+}
+
+body{
+    background: var(--primaryColor);
+}
+
+.wrapper{
+    margin: 60px;
+    display: grid;
+    place-content: center;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fill, 285px);
+}
+
+.wrapper li{
+    height: 280px;
+    border-radius: 6px;
+    list-style: none;
+    background: #fff;
+    padding: 15px 20px 20px;
+}
+
+.wrapper .note{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    /* background: var(--primaryColor); */
+}
+
+.add-box, .icon, .bottom-content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.add-box{
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+    /* border: 3px dotted black; */
+}
+
+.add-box .icon {
+    height: 80px;
+    width: 80px;
+    border: 3px dashed #000;
+    color: #000;
+    font-size: 35px;
+    border-radius: 50%;
+    justify-content: center;
+}
+
+.add-box p {
+    color: #000;
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+.note p{
+    font-size: 22px;
+    font-weight: 500;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.note div:first-child span{
+    color: #575757;
+    font-size: 16px;
+    display: block;
+    margin-top: 6px;
+    max-height: 160px;
+    white-space: pre-wrap;
+    overflow-y: scroll;
+}
+
+.note div:first-child span::-webkit-scrollbar{
+    width: 10px;
+}
+.note div:first-child span::-webkit-scrollbar-thumb{
+    background: #f3f3f3;
+    border-radius: 10px;
+}
+
+.note .bottom-content{
+    padding-top: 10px;
+    border-top: 1px solid #ccc;
+}
+
+.bottom-content span{
+    color: #6d6d6d;
+    font-size: 14px;
+}
+
+.bottom-content .settings {
+    display: flex;
+    gap: 20px;
+}
+
+.bottom-content .settings i{
+    color: #6d6d6d;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.bottom-content .settings i:hover{
+    color: #000;
+}
+.pop-up-container{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: scale(0);
+}
+.pop-up{
+    position: relative;
+    width: 370px;
+    background: white;
+    border-radius: 6px;
+    transition:all .3s;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+.pop-up form{
+    padding: 20px 30px;
+}
+
+.pop-up-container.show{
+    transform: scale(1);
+}
+
+.pop-up .heading{
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    border-bottom: 2px solid #ccc;
+}
+
+.pop-up .cancel{
+    position: absolute;
+    top: 17px;
+    right: 25px;
+    cursor: pointer;
+}
+
+.pop-up .cancel i{
+    font-size: 25px;
+    font-weight: 600;
+    transition: all .3s;
+    color: #ccc;
+}
+
+.pop-up .cancel i:hover{
+    color: #000;
+}
+
+
+.pop-up .input-box{
+    width: 100%;
+    height: 50px;
+    margin-bottom: 20px;
+}
+
+.pop-up .input-box input{
+    width: 100%;
+    height: 100%;
+    outline: none;
+    border: 2px solid #ccc;
+    border-radius: 6px;
+    padding: 10px 20px;
+    font-size: 18px;
+}
+
+.pop-up .input-box input:focus{
+    border-color: var(--primaryColor);
+}
+
+.pop-up .textarea-box{
+    width: 100%;
+    height: 200px;
+}
+
+.pop-up .textarea-box textarea{
+    width: 100%;
+    height: 100%;
+    resize: none;
+    outline: none;
+    border: 2px solid #ccc;
+    border-radius: 6px;
+    padding: 10px 20px;
+    font-size: 18px;
+}
+
+.pop-up .textarea-box textarea:focus{
+    border-color: var(--primaryColor);
+}
+
+.pop-up .btn {
+    text-align: center;
+    margin-top: 20px;
+}
+.pop-up .btn button {
+    width: 140px;
+    padding: 10px;
+    outline: none;
+    border: none;
+    background: var(--primaryColor);
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 6px;
+}
